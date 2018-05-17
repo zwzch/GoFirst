@@ -42,6 +42,14 @@ import (
 	//"iotestgo/myparallel/mygoroutine"
 	//"iotestgo/myparallel/mygoroutine"
 	//"GoFirst/sql"
+	//"GoFirst/myGoroutine"
+	//"os/exec"
+	//"fmt"
+	//"os"
+	//"GoFirst/Test"
+	//"GoFirst/Utils"
+	//"GoFirst/goProject"
+	//"GoFirst/goProject/tomcat"
 	"GoFirst/myGoroutine"
 )
 func main()  {
@@ -72,5 +80,13 @@ func main()  {
 	//goandc.Mygoandcndc()
 	//mygoroutine.Mygoroutine()
 	//sql.MysqlTest()
-	myGoroutine.ChTest()
+	//myGoroutine.ChTest()
+	//Test.Test()
+	//Utils.UtilTest()
+	//goProject.StartServer(":8080")
+	//goProject.XmlParse()
+	//tomcat.FinalTest()
+	//tomcat.XmlParse("/home/zw/go/src/GoFirst/goProject/tomcat/study.xml")
+	//	tomcat.HtmlBody("/home/zw/go/src/GoFirst/goProject/tomcat/","myhtml.html")
+	myGoroutine.MySelect()
 	}

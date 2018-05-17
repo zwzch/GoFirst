@@ -36,15 +36,18 @@ func handleClient(conn net.Conn) {
 	defer conn.Close()
 	var buf [512]byte
 	for {
+		//返回长度
 		n, err := conn.Read(buf[0:])
 		if err != nil {
 			return
 		}
 		rAddr := conn.RemoteAddr()
-		fmt.Println("Receive from client", rAddr.String(), string(buf[0:n]))
-		_, err2 := conn.Write([]byte("Welcome client!"))
-		if err2 != nil {
-			return
-		}
+		//fmt.Println("Receive from client", rAddr.String(), string(buf[0:n]))
+		fmt.Println(rAddr.String())
+		fmt.Println(string(buf[0:n]))
+		//_, err2 := conn.Write([]byte("Welcome client!"))
+		//if err2 != nil {
+		//	return
+		//}
 	}
 }
