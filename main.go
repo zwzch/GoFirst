@@ -51,7 +51,8 @@ import (
 	//"GoFirst/goProject"
 	//"GoFirst/goProject/tomcat"
 	//"GoFirst/myGoroutine"
-	"GoFirst/goProject/tomcat"
+	//"GoFirst/goProject/tomcat"
+	"GoFirst/goProject/ticketMaster"
 )
 func main()  {
 	//有且只有一个main包和main函数
@@ -86,10 +87,13 @@ func main()  {
 	//Utils.UtilTest()
 	//goProject.StartServer(":8080")
 	//goProject.XmlParse()
-	tomcat.FinalTest()
+	//tomcat.FinalTest()
 	//tomcat.XmlParse("/home/zw/go/src/GoFirst/goProject/tomcat/study.xml")
 	//	tomcat.HtmlBody("/home/zw/go/src/GoFirst/goProject/tomcat/","myhtml.html")
 	//myGoroutine.MySelect()
 	//tomcat.RedisTest()
 	//tomcat.ConnTest()
+	//ticketMaster.TStart()
+	ticketMaster.TClient()
+	//ticketMaster.QueueTest()
 	}
