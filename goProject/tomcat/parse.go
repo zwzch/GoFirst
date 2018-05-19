@@ -18,7 +18,8 @@ type parseResult struct {
 	ip string
 	port int
 	staticpath string
-}
+	sessionSize int
+	}
 
 type StringResources struct {
 	XMLName        xml.Name         `xml:"resources"`
@@ -49,6 +50,8 @@ func XmlParse(path string ) *parseResult{
 	parse.port,_ = strconv.Atoi(port)
 	staticpath :=result.ResourceString[2]
 	parse.staticpath = staticpath.InnerText
+	sessionSize :=result.ResourceString[3]
+	parse.sessionSize,_ = strconv.Atoi(sessionSize.InnerText)
 	return parse
 	//fmt.Println(ip,port)
 	//log.Println(result)

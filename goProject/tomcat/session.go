@@ -3,9 +3,12 @@ package tomcat
 import (
 	"sync"
 	"sync/atomic"
+	"errors"
 )
 
 const  sessionMapNum  = 32
+var SessionClosedError = errors.New("Session Closed")
+var SessionBlockedError = errors.New("Session Blocked")
 
 var globalSessionId uint64
 type Manager struct {
@@ -29,13 +32,20 @@ func NewManger() *Manager{
 		}
 		return manager}
 
+func (manager *Manager) GetSession(sessionID uint64) *Session {
+	smap := &manager.sessionMaps[sessionID%sessionMapNum]
+	smap.RLock()
+	defer smap.RUnlock()
+	session, _ := smap.sessions[sessionID]
+	return session
+}
+
 type Session struct {
 	id uint64
 	manger *Manager
 	sendChan chan interface{}
 	recvMutex	sync.Mutex
 	sendMutex 	sync.RWMutex
-
 	closeFlag	int32
 	closeChan	chan int
 	closeMutex	sync.Mutex
@@ -45,8 +55,24 @@ type Session struct {
 	func (session *Session) ID() uint64{
 		return session.id
 	}
-	func (session *Session) IsClosed(){
+	func (session *Session) IsClosed() bool{
+		return atomic.LoadInt32(&session.closeFlag) == 1
+	}
+	func (session *Session)Close() error{
+		if atomic.CompareAndSwapInt32(&session.closeFlag,0,1){
+			close(session.closeChan)
+			if session.sendChan!=nil{
+				session.sendMutex.Lock()
+				close(session.sendChan)
+				//if clear, ok := session.codec.(ClearSendChan); ok {
+				//	clear.ClearSendChan(session.sendChan)
+				//}
 
+				session.sendMutex.Unlock()
+			}
+
+		}
+		return SessionClosedError
 	}
 func NewSession(sessionChanSize int) *Session{
 	return newSession(nil,sessionChanSize)
@@ -64,6 +90,9 @@ func newSession(manager *Manager,sendChanSize int) *Session{
 	}
 	return session
 	}
+
+
+
 
 
 
