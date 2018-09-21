@@ -1,59 +1,7 @@
 package main
-//import (
-//"GoFirst/mymath"
-//"fmt"
-//"os"
-//"strconv"
-//)
-//func main() {
-//	if len(os.Args) < 2 {
-//		fmt.Println("input number")
-//		reurn
-//	}
-//	num, err := strconv.Atoi(os.Args[1])
-//	if err != nil {
-//		fmt.Println("input must be number", err)
-//		retturn
-//	}
-//	fmt.Println("Fabnacci :", num, mymath.Fabnacci(num))
-//}
-import (
-	//"fmt"
-	//"GoFirst/mygolang"
-	//"GoFirst/mycollection"
-	//"GoFirst/mycollection"
-	//"GoFirst/myfunc"
 
-	//"GoFirst/mygolang"
-	//"GoFirst/mycollection"
-	//"GoFirst/myoop"
-	//"GoFirst/myoop"
-	//"GoFirst/myGoroutine"
-	//"GoFirst/mypackage"
-	//"GoFirst/goandc"
-	//"GoFirst/myapi"
-	//"GoFirst/myio"
-	//"GoFirst/myio/http"
-	//"GoFirst/myio/mytcp"
-	//"GoFirst/myio/mytcp"
-	//"GoFirst/myref"
-	//"GoFirst/goandc"
-	//"GoFirst/myref"
-	//"iotestgo/myparallel/mygoroutine"
-	//"iotestgo/myparallel/mygoroutine"
-	//"GoFirst/sql"
-	//"GoFirst/myGoroutine"
-	//"os/exec"
-	//"fmt"
-	//"os"
-	//"GoFirst/Test"
-	//"GoFirst/Utils"
-	//"GoFirst/goProject"
-	//"GoFirst/goProject/tomcat"
-	//"GoFirst/myGoroutine"
-	//"GoFirst/goProject/tomcat"
-	"GoFirst/goProject/ticketMaster"
-)
+import "GoFirst/mobula"
+
 func main()  {
 	//有且只有一个main包和main函数
 	//fmt.Println("Hello World")
@@ -94,6 +42,14 @@ func main()  {
 	//tomcat.RedisTest()
 	//tomcat.ConnTest()
 	//ticketMaster.TStart()
-	ticketMaster.TClient()
+	//ticketMaster.TClient()
 	//ticketMaster.QueueTest()
-	}
+	//fmt.Print("111")
+	//mobula.Transform2()
+	//mobula.Unmarshal()
+	//mobula.Test()
+	//mobula.MergeTransform()
+	mobula.PbulishTransform()
+	//mobula.GetGroups()
+	//mobula.TestT()
+}
