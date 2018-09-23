@@ -312,6 +312,7 @@ func parsePublishTransform(Fields []string){
 								b_adid := jsoniter.Get(bannerJson, "adId").ToString()
 								if (b_adid == "") {b_adid = jsoniter.Get(bannerJson, "adid").ToString()}
 								if (b_adid == "") {b_adid="NULL"}
+
 								s := []string{string(Fields[0]), Fields[1], Fields[11], Fields[2], string(Fields[3]), string(Fields[4]),
 									string(Fields[17]), Fields[8], string(opcode), Fields[5], Fields[9], Fields[7], string(Fields[13]), string(pid), string(tid),
 									string(gid), string(gtype), string(b_adid), string(b_bid), string(pn),

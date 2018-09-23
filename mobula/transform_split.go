@@ -16,41 +16,6 @@ func checkErr(e error){
 }
 
 
-func MergeTransform() {
-	fin,_ := os.Open("test2.txt")
-	//input := bufio.NewScanner(os.Stdin)//初始化一个扫表对象
-	input := bufio.NewScanner(fin)//初始化一个扫表对象
-	for input.Scan() {//扫描输入内容
-		lines := input.Text()
-		//fmt.Println(lines)
-		lineArr := strings.Split(lines,"\n")
-
-		for i,n := 0, len(lineArr); i<n; i++ {
-			//		  logid, publish_time, op_code, publish_json, sid, stype, server_v, \
-			//        income_type, report_time, time_stamp, app_pkg, child, token, lc, \
-			//        sdk_vn, app_vc, app_vn, license, key, entry, level, pid, tid, gid, gtype, \
-			//        bid, adid, adpkg, ac, coins, goid, anid,publish_ext, report_ext, ip,mdu, \
-			//        publish_forms, dllv, svn, hostname, sidtags, directgp, ps_request,\
-			//        api_name, vs
-			//Fields :=strings.Split(lineArr[i],"\t")
-			//op_code_sub := "NULL"
-			//op_code := Fields[2];
-			//opArr := strings.Split(op_code, ",")
-			//for e := range opArr {
-			//	if (opArr[e] != "null" && opArr[e] != "NULL") {
-			//		op_code_sub = opArr[e]
-			//	}
-			//}
-			//obj := Fields[3]
-			//var publish_json []byte = []byte(Fields[3])
-			//jsoniter.Get()
-			//fmt.Println(Fields)
-			//fmt.Println(len(Fields))
-		}
-
-		}
-}
-
 func Transform2() {
 
 	//fin,_ := os.Open("test.txt")

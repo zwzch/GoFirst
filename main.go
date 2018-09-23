@@ -48,8 +48,8 @@ func main()  {
 	//mobula.Transform2()
 	//mobula.Unmarshal()
 	//mobula.Test()
-	//mobula.MergeTransform()
-	mobula.PbulishTransform()
+	mobula.MergeTransform()
+	//mobula.PbulishTransform()
 	//mobula.GetGroups()
 	//mobula.TestT()
 }
